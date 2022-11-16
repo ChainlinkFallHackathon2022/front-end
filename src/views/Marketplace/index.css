@@ -1,0 +1,265 @@
+.marketplace-grid-container > * {
+  box-shadow: -1px 1px 7px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 4px;
+}
+
+.marketplace-grid-container {
+  display: grid;
+  gap: 5px;
+  grid-template:
+    "header" 50px
+    "market" 905px;
+}
+
+.header {
+  grid-area: header;
+  background-color: #0c163a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.market {
+  grid-area: market;
+  background-color: #0c163a;
+}
+
+/* HEADER */
+
+#account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* MARKET */
+
+.market-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 100px auto;
+  width: 60%;
+}
+
+.filter-panel {
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  background-color: #0c0c0c;
+  opacity: 0.75;
+  overflow: hidden;
+  position: sticky;
+  padding: 20px;
+  top: 10px;
+  z-index: 1000;
+}
+
+.filter-panel:hover {
+  opacity: 1;
+}
+
+.masonry-container {
+  min-height: 650px;
+  border-radius: 20px;
+  padding: 15px;
+  background-color: #0c0c0c;
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 180px;
+  grid-auto-flow: dense;
+
+  background: url("../../assets/imgs/space.jpg");
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 1000px;
+}
+
+.picture {
+  width: 100%;
+  height: 100%;
+  background-color: #0c0c0c;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s;
+}
+
+.picture .front {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+
+.picture .front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.horizontal {
+  grid-column: span 2;
+}
+
+.vertical {
+  grid-row: span 2;
+}
+
+.picture .back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  transform: rotateY(180deg);
+}
+
+.picture .back button {
+  width: 140px;
+  height: 40px;
+  color: #ffffff;
+  background-color: #248ce0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.masonry-container .content:hover .picture {
+  transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 950px) {
+  .masonry-container {
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: 180px;
+  }
+
+  .content {
+    grid-row: unset;
+    grid-column: unset;
+  }
+}
+
+.tools {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* NFT INFO */
+
+.grid-container {
+  padding: 5px;
+  background-color: #0c0c0c;
+  margin: -5px auto;
+  display: grid;
+  grid-template: "nft bot" 400px "nft bot" 500px / 700px;
+  gap: 5px;
+}
+
+.nft-view {
+  background-color: #0c163a;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  gap: 20px;
+  grid-area: nft;
+}
+
+.nft-view img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.bot-view {
+  background-color: #0c163a;
+  padding: 15px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  grid-area: bot;
+}
+
+.nft-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.nft-details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details-title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.details-data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.balances {
+  display: flex;
+  justify-content: space-between;
+}
+
+.balance-data {
+  justify-content: flex-end;
+}
+
+.bot-balance {
+  gap: 5px;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 7px;
+}
+
+.owner {
+  display: flex;
+  flex-direction: column;
+}
+
+.nft-image-mini {
+  object-fit: cover;
+}
+
+.nft-image-mini:hover {
+  border: 2px solid #ffffff;
+}
+
+.bot-selected {
+  border: 2px solid #ffffff;
+}
+
+.nft-preview {
+  margin-top: 10px;
+  display: flex;
+  gap: 5px;
+}
+
+.item-preview {
+  cursor: pointer;
+}

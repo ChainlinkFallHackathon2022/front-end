@@ -1,0 +1,252 @@
+.control::-webkit-scrollbar,
+.table::-webkit-scrollbar,
+.transactions::-webkit-scrollbar,
+.bots::-webkit-scrollbar {
+  width: 10px;
+}
+
+.control::-webkit-scrollbar-track,
+.table::-webkit-scrollbar-track,
+.transactions::-webkit-scrollbar-track,
+.bots::-webkit-scrollbar-track {
+  background: #0c163a;
+}
+
+.control::-webkit-scrollbar-thumb,
+.table::-webkit-scrollbar-thumb,
+.transactions::-webkit-scrollbar-thumb,
+.bots::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.trade-grid-container {
+  display: grid;
+  gap: 5px;
+  grid-template:
+    "header" 50px
+    "bots" 700px
+    "control" 700px
+    "chart" 700px
+    "transactions" 700px;
+}
+
+@media (min-width: 840px) {
+  .trade-grid-container {
+    grid-template:
+      "header header" 50px
+      "bots chart" 575px
+      "control transactions" 325px / 300px auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .trade-grid-container {
+    grid-template:
+      "header header header" 50px
+      "bots chart control" 575px
+      "bots transactions control" 325px / 300px auto 300px;
+  }
+}
+
+.header {
+  grid-area: header;
+  background-color: #0c163a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.bots {
+  grid-area: bots;
+  background-color: #0c163a;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.chart {
+  grid-area: chart;
+  background-color: #0c163a;
+}
+
+.transactions {
+  grid-area: transactions;
+  background-color: #0c163a;
+  position: relative;
+  overflow-y: auto;
+}
+
+.control {
+  grid-area: control;
+  background-color: #0c163a;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+
+#account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+/* NAV */
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 150px;
+}
+
+.container img {
+  background-color: silver;
+  border-radius: 5px;
+  width: 100%;
+  height: auto;
+}
+
+@supports (object-fit: cover) {
+  .container img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+#preview-photo {
+  visibility: hidden;
+}
+
+#icon {
+  width: 100%;
+  height: 150px;
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #cfcfcf56;
+}
+
+#icon:hover {
+  border: 0.5px solid #ffffff;
+}
+
+#icon:active {
+  border: 2px solid #90caf9;
+}
+
+.data-container {
+  height: 55px;
+  padding: 7px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.data-container:hover {
+  background-color: #b4b4b42c;
+}
+
+.data-container:active {
+  background-color: #dadada48;
+}
+
+.selected {
+  background-color: #0c0c0c;
+}
+
+.selected:hover {
+  background-color: #111629;
+}
+
+.nft-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.nft-image {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nft-description {
+  padding: 10px;
+}
+
+.bot-info {
+  /* line-height: 1.75; */
+  display: flex;
+  flex-direction: column;
+}
+
+.divider-bot {
+  width: 100%;
+  /* border: 3px solid #0c0c0c; */
+}
+
+.divider-control {
+  width: 100%;
+  border: 1px solid #9696963d;
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* CONTROL */
+
+.nft-profile-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #ffffff;
+}
+
+.balance {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bot-description {
+  width: 100%;
+  inline-size: 270px;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  hyphens: auto;
+}
+
+.buy-sell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.widget-container {
+  color: blue;
+  background-color: red;
+}
