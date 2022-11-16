@@ -34,6 +34,18 @@
   REACT_APP_TOKEN_SECRET=
   ```
 
+### Web3 Provider
+
+We are using QuickNode RPC
+- You can change RPC in `src/utils/network.js`
+
+  ```js
+export const quickNodeRPC = {
+  polygon: "ENTER_RPC",
+  mumbai: "ENTER_RPC",
+};
+  ```
+
 ### Available Scripts
 
 In the project directory, you can run:
