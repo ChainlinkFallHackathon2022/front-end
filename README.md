@@ -40,10 +40,10 @@ We are using QuickNode RPC
 - You can change RPC in `src/utils/network.js`
 
   ```js
-export const quickNodeRPC = {
-  polygon: "ENTER_RPC",
-  mumbai: "ENTER_RPC",
-};
+  export const quickNodeRPC = {
+    polygon: "ENTER_RPC",
+    mumbai: "ENTER_RPC",
+  };
   ```
 
 ### Available Scripts
