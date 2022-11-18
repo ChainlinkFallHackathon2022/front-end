@@ -3,6 +3,7 @@ import { Warning } from "../Warning";
 import { Button, Card, TextField, Slider, Link } from "@mui/material";
 import { SnackBar } from "../SnackBar";
 import { Loader } from "../Loader";
+import { btcMockAddress, ethMockAddress } from "../../utils/address";
 
 export default function Control({
   account,
@@ -278,7 +279,10 @@ export default function Control({
               </div>
               <div className="balance">
                 <span>Purchased balance:</span>
-                <span className="bold">{data.bot.pair} WBTC</span>
+                <span className="bold">
+                  {data.bot.pair} {bot.pair === btcMockAddress && "WBTC"}
+                  {bot.pair === ethMockAddress && "WBTC"}
+                </span>
               </div>
               <Button
                 variant="contained"

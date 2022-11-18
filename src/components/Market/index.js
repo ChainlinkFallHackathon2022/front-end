@@ -27,7 +27,7 @@ export default function Market({ account, contract, web3 }) {
     getUserNfts,
   } = useNFTStorage(account, contract);
   const [from, setFrom] = useState(0);
-  const [to, setTo] = useState(10);
+  const [to, setTo] = useState(30);
   const [selectedNFT, setSelectedNFT] = useState(false);
   const [address, setAddress] = useState("");
   const [radio, setRadio] = useState("");

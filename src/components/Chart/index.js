@@ -1,7 +1,7 @@
 import { AdvancedChart } from "react-tradingview-embed";
 import { btcMockAddress, ethMockAddress } from "../../utils/address";
 
-export default function Chart(bot) {
+export default function Chart({ bot }) {
   return (
     <>
       <AdvancedChart
@@ -9,10 +9,9 @@ export default function Chart(bot) {
           width: "100%",
           height: "100%",
           // autosize: true,
-          symbol: bot.pair
-            ? `UNISWAP3POLYGON:
-            ${bot.pair === btcMockAddress && "WBTCUSDC"}
-            ${bot.pair === ethMockAddress && "WETHUSDC"}`
+          symbol: bot
+            ? (bot.pair === btcMockAddress && "UNISWAP3POLYGON:WBTCUSDC") ||
+              (bot.pair === ethMockAddress && "UNISWAP3POLYGON:WETHUSDC")
             : "UNISWAP3POLYGON:WBTCUSDC",
           interval: "1H",
           range: "1D",
